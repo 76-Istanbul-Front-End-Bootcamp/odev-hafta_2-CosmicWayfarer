@@ -46,14 +46,11 @@ numbers.multiply();
 function isValidName(name){
 var isim=name.trim();
   
-if(/ /.test(isim)){
-  return false;
-}else if(/[0-9]/.test(isim)){
-  return false;
-}
-  else if(/\d|\W[^\s]/.test(isim)) {
+
+
+ if(/\d|\W[^\s]| |[0-9]/.test(isim)) {
        return false;
-      
+        
 } 
   else{
   return true;
