@@ -44,11 +44,8 @@ numbers.multiply();
 */
 
 function isValidName(name){
-var isim=name.trim();
-  
 
-
- if(/\d|\W[^\s]| |[0-9]/.test(isim)) {
+ if(/\d|\W[^\s]| |[0-9]/.test(name)) {
        return false;
         
 } 
@@ -56,7 +53,7 @@ var isim=name.trim();
   return true;
 }
 }
-isValidName("asl*ı");
+
 
 /*
   Odev 4:
