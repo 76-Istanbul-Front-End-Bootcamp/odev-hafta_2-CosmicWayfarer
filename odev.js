@@ -44,15 +44,21 @@ numbers.multiply();
 */
 function isValidName(name){
 var isim=name.trim();
+  
 if(!/ /.test(isim)===false){
   console.log("bu isim geçersiz");
 }else if(!/[0-9]/.test(isim)===false){
   console.log("bu isim geçersiz");
-}else{
+}
+  else if(!/\d|\W/.test(isim)===false) {
+       console.log("bu isim geçersiz");
+        
+}
+  else{
   console.log("bu isim geçerli");
 }
 }
-isValidName("as lı");
+isValidName("asl*ı");
 
 /*
   Odev 4:
