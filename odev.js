@@ -10,7 +10,7 @@ var person = {
   }
 }
 
-var messageFunc = person.message
+var messageFunc = person.message.bind(person);
 messageFunc();
 
 
@@ -43,8 +43,16 @@ numbers.multiply();
   Ornek : isValidName(" J ohn") false donmeli
 */
 function isValidName(name){
-
+var isim=name.trim();
+if(!/ /.test(isim)===false){
+  console.log("bu isim geçersiz");
+}else if(!/[0-9]/.test(isim)===false){
+  console.log("bu isim geçersiz");
+}else{
+  console.log("bu isim geçerli");
 }
+}
+isValidName("as lı");
 
 /*
   Odev 4:
