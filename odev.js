@@ -42,24 +42,7 @@ numbers.multiply();
   Ornek : isValidName("John") true donmeli
   Ornek : isValidName(" J ohn") false donmeli
 */
-function isValidName(name){
-var isim=name.trim();
-  
-if(!/ /.test(isim)===false){
-  console.log("bu isim geçersiz");
-}else if(!/[0-9]/.test(isim)===false){
-  console.log("bu isim geçersiz");
-}
-  else if(!/\d|\W/.test(isim)===false) {
-       console.log("bu isim geçersiz");
-        
-}
-  else{
-  console.log("bu isim geçerli");
-}
-}
-///2. varyasyon
-isValidName("asl*ı");
+
 function isValidName(name){
 var isim=name.trim();
   
@@ -68,10 +51,10 @@ if(/ /.test(isim)){
 }else if(/[0-9]/.test(isim)){
   return false;
 }
- /* else if(/\d|\W/.test(isim)) {
+  else if(/\d|\W[^\s]/.test(isim)) {
        return false;
-        //olmadı
-} */
+      
+} 
   else{
   return true;
 }
