@@ -59,6 +59,23 @@ if(!/ /.test(isim)===false){
 }
 }
 isValidName("asl*ı");
+function isValidName(name){
+var isim=name.trim();
+  
+if(/ /.test(isim)){
+  return false;
+}else if(/[0-9]/.test(isim)){
+  return false;
+}
+ /* else if(/\d|\W/.test(isim)) {
+       return false;
+        //olmadı
+} */
+  else{
+  return true;
+}
+}
+isValidName("asl*ı");
 
 /*
   Odev 4:
