@@ -58,6 +58,7 @@ if(!/ /.test(isim)===false){
   console.log("bu isim geçerli");
 }
 }
+///2. varyasyon
 isValidName("asl*ı");
 function isValidName(name){
 var isim=name.trim();
