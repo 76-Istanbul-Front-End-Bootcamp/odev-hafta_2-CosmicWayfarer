@@ -10,7 +10,7 @@ var person = {
   }
 }
 
-var messageFunc = person.message.bind(person);
+var messageFunc = person.message.call(person);
 messageFunc();
 
 
@@ -25,7 +25,7 @@ messageFunc();
 var numbers = {
   numbers: [[10,20,30], 2],
   multiply: function(){
-    this.numbers[0].map(function(number, numberIndex){
+    this.numbers[0].map((number, numberIndex)=>{
         const result = number * this.numbers[1];
         console.log(result)
     })
@@ -42,8 +42,8 @@ numbers.multiply();
   Ornek : isValidName("John") true donmeli
   Ornek : isValidName(" J ohn") false donmeli
 */
-
-function isValidName(name){
+// REGEX
+function isValidNameReg(name){
 
  if(/\d|\W[^\s]| |[0-9]/.test(name)) {
        return false;
@@ -54,9 +54,34 @@ function isValidName(name){
 }
 }
 
+//
+function isValidName(ad){
+function isValidName(name){
+    if((typeof name==='string')&&(name instanceof String)){
+    var a=name;
+    var atrim=a.trim();
+    var atrimSpace=atrim.split(" ");
+    
+    atrimSpace.forEach((item)=>{
+     if(item.length===1){
+       return false
+     }              
+      return true;               });
+    }else{
+      return false;
+    }
+    }
+    console.log(isValidName("Fra nk") === false);
+    console.log(isValidName("Frank") === true);
+    console.log(isValidName(false) === false);
+    console.log(isValidName(null) === false);
+    console.log(isValidName(undefined) === false);
+    console.log(isValidName("") === false);
+    console.log(isValidName("  \t\n") === false);
+    console.log(isValidName("X") === false);
+}
 
-/*
-  Odev 4:
+/*  Odev 4:
   Asagidaki katilimSaati fonksionu 2 arguman almaktadir.
   dersSayisi: ogrencinin katildigi ders sayisi
   dersSaati: her bir dersin dakika cinsinden suresi
