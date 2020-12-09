@@ -55,7 +55,6 @@ function isValidNameReg(name){
 }
 
 //
-function isValidName(ad){
 function isValidName(name){
     if((typeof name==='string')&&(name instanceof String)){
     var a=name;
