@@ -56,26 +56,24 @@ function isValidNameReg(name){
 
 //
 function isValidName(name){
-  if(typeof name=="string"){
-    var ad=name;
-    var trimAd=ad.trim();
+  if(typeof name==typeof("string")){
+    var trimAd=name.trim();
     var isim=trimAd.split(" ")
     //console.log(isim);
-isim.forEach((item,itemIndex)=>{
-      //console.log(item.length);
-if(item.length<=1){
-  
-  return false; 
-} else{return true;}
-   });  
-      }
-
-  else{
-    return false;
-    //console.log("bu bir yazı değil");
+for(var i = 0; i<=isim.length; i++){
+  if(isim[i].length<=1){
+    return false; }
+  else {
+    return true;
+  }
   }
 
+} else {
+  
+    return false;
+  }
 }
+    
  
 //isValidName("aldfdsfı");
 console.log(isValidName("Frank") === true);
@@ -103,7 +101,7 @@ function katilimSaati(dersSayisi, dersSuresi){
   var sayi=Number(sayi1);
   var sure=Number(sure2);
 try{  
-  if((typeof sayi ==='boolean')|| typeof sure==='boolean') throw "Geçersiz giriş";
+  
   if((isNaN(sayi)) || ( isNaN(sure) ) ) throw "Geçersiz giriş";
 
   var ders= parseInt(sayi)*parseInt(sure);
@@ -117,15 +115,3 @@ try{
   }
 
 }
-console.log(katilimSaati(false,false)=== false);
-console.log(katilimSaati(false,true) === false);
-console.log(katilimSaati(true,false) === false);
-console.log(katilimSaati(true,true) === false);
-console.log(katilimSaati(10,6));
-console.log(katilimSaati(10,"6"));
-console.log(katilimSaati("10",6));
-console.log(katilimSaati("10","6"));
-console.log(katilimSaati(6,10.1));
-console.log(katilimSaati(6.1,10) );
-console.log(katilimSaati(6,"10.1"));
-
