@@ -92,7 +92,19 @@ function isValidName(name){
   Ornek: katilimSaati("5", "30") 150 sonucunu vermelidir.
 */
 function katilimSaati(dersSayisi, dersSuresi){
+   var sayi1=String(dersSayisi);
+  var sure2=String(dersSuresi);
+  var sayi=Number(sayi1);
+  var sure=Number(sure2);
+try{  
+  if((isNaN(sayi)) || ( isNaN(sure) ) ) throw "Geçersiz giriş";
+  var ders= parseInt(sayi)*parseInt(sure);
+   return true;
+   }
+  catch(err){
+    return false;//doğruluk tablosu için
+    //console.log(err); // error verdirmek için
+  }
 
 }
-
 
