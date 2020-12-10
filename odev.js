@@ -99,7 +99,7 @@ function katilimSaati(dersSayisi, dersSuresi){
 try{  
   if((isNaN(sayi)) || ( isNaN(sure) ) ) throw "Geçersiz giriş";
   var ders= parseInt(sayi)*parseInt(sure);
-   return true;
+  return ders;
    }
   catch(err){
     return false;//doğruluk tablosu için
