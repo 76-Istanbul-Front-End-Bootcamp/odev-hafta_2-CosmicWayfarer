@@ -56,7 +56,7 @@ function isValidNameReg(name){
 
 //
 function isValidName(name){
-    if((typeof name==='string')&&(name instanceof String)){
+    if((typeof name==='string')||(name instanceof String)){
     var a=name;
     var atrim=a.trim();
     var atrimSpace=atrim.split(" ");
