@@ -56,39 +56,35 @@ function isValidNameReg(name){
 
 //
 function isValidName(name){
+  if(typeof name=="string"){
+    var ad=name;
+    var trimAd=ad.trim();
+    var isim=trimAd.split(" ")
+    //console.log(isim);
+isim.forEach((item,itemIndex)=>{
+      //console.log(item.length);
+if(item.length<=1){
   
-  if(typeof name=='string'){
-      var isim=name;
-    var isimTrim=isim.trim();
-    var isimSpace=isimTrim.split(" ");
-    console.log(isimSpace);
- 
-isimSpace.forEach((item)=>{
-  //console.log(item);
- var deneme =[item.length];
-  console.log(deneme);
- for(var i=0;i<deneme.length;i++){
-    if(deneme[i]==1){
-      console.log("olmaz");
-      return false;
-    }
-    return true;
+  return false; 
+} else{return true;}
+   });  
+      }
+
+  else{
+    return false;
+    //console.log("bu bir yazı değil");
   }
 
-    }); //foreach  
-    
-  }//tip kontrolü 
-  else{return false;}
 }
-
-  console.log(isValidName("Fran k") === false);
-   // console.log(isValidName("Frank") === true);
-   // console.log(isValidName(false) === false);
-   // console.log(isValidName(null) === false);
-   // console.log(isValidName(undefined) === false);
-   // console.log(isValidName("") === false);
-   // console.log(isValidName("  \t\n") === false);
-   // console.log(isValidName("X") === false);
+ 
+//isValidName("aldfdsfı");
+console.log(isValidName("Frank") === true);
+console.log(isValidName(false) === false);
+console.log(isValidName(null) === false);
+console.log(isValidName(undefined) === false);
+console.log(isValidName("") === false);
+console.log(isValidName("  \t\n") === false);
+console.log(isValidName("X") === false);
 
 /*  Odev 4:
   Asagidaki katilimSaati fonksionu 2 arguman almaktadir.
@@ -107,14 +103,29 @@ function katilimSaati(dersSayisi, dersSuresi){
   var sayi=Number(sayi1);
   var sure=Number(sure2);
 try{  
+  if((typeof sayi ==='boolean')|| typeof sure==='boolean') throw "Geçersiz giriş";
   if((isNaN(sayi)) || ( isNaN(sure) ) ) throw "Geçersiz giriş";
+
   var ders= parseInt(sayi)*parseInt(sure);
   return ders;
    }
+  
   catch(err){
-    //return false;//doğruluk tablosu için
+    
     console.log(err); // error verdirmek için
+    return false;//doğruluk tablosu için
   }
 
 }
+console.log(katilimSaati(false,false)=== false);
+console.log(katilimSaati(false,true) === false);
+console.log(katilimSaati(true,false) === false);
+console.log(katilimSaati(true,true) === false);
+console.log(katilimSaati(10,6));
+console.log(katilimSaati(10,"6"));
+console.log(katilimSaati("10",6));
+console.log(katilimSaati("10","6"));
+console.log(katilimSaati(6,10.1));
+console.log(katilimSaati(6.1,10) );
+console.log(katilimSaati(6,"10.1"));
 
