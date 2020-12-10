@@ -43,7 +43,7 @@ numbers.multiply();
   Ornek : isValidName(" J ohn") false donmeli
 */
 // REGEX
-function isValidNameReg(name){
+/*function isValidNameReg(name){
 
  if(/\d|\W[^\s]| |[0-9]/.test(name)) {
        return false;
@@ -52,9 +52,9 @@ function isValidNameReg(name){
   else{
   return true;
 }
-}
+}*/
 
-//
+//odev 3:
 function isValidName(name){
   if(typeof name==typeof("string")){
     var trimAd=name.trim();
