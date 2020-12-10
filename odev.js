@@ -104,14 +104,24 @@ try{
   
   if((isNaN(sayi)) || ( isNaN(sure) ) ) throw "Geçersiz giriş";
 
-  var ders= parseInt(sayi)*parseInt(sure);
-  return ders;
+  console.log( parseInt(sayi)*parseInt(sure));
+  return true;
    }
   
   catch(err){
     
-    console.log(err); // error verdirmek için
+   // console.log(err); // error verdirmek için
     return false;//doğruluk tablosu için
   }
 
 }
+console.log(katilimSaati(false,false) === false);
+console.log(katilimSaati(false,true) === false);
+console.log(katilimSaati(true,false) === false);
+console.log(katilimSaati(true,true) === false);
+console.log(katilimSaati(10,6) === false);
+console.log(katilimSaati(10,"6") === false);
+console.log(katilimSaati("10",6) === false);
+console.log(katilimSaati("10","6") === false);
+console.log(katilimSaati(6,10.1) === false);
+console.log(katilimSaati(6.1,10));
