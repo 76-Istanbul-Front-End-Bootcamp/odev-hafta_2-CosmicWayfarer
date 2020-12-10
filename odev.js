@@ -102,8 +102,8 @@ try{
   return ders;
    }
   catch(err){
-    return false;//doğruluk tablosu için
-    //console.log(err); // error verdirmek için
+    //return false;//doğruluk tablosu için
+    console.log(err); // error verdirmek için
   }
 
 }
