@@ -56,29 +56,39 @@ function isValidNameReg(name){
 
 //
 function isValidName(name){
-    if((typeof name==='string')||(name instanceof String)){
-    var a=name;
-    var atrim=a.trim();
-    var atrimSpace=atrim.split(" ");
-    
-    atrimSpace.forEach((item)=>{
-     if(item.length===1){
-       return false
-     }              
-      return true;               });
-    }else{
+  
+  if(typeof name=='string'){
+      var isim=name;
+    var isimTrim=isim.trim();
+    var isimSpace=isimTrim.split(" ");
+    console.log(isimSpace);
+ 
+isimSpace.forEach((item)=>{
+  //console.log(item);
+ var deneme =[item.length];
+  console.log(deneme);
+ for(var i=0;i<deneme.length;i++){
+    if(deneme[i]==1){
+      console.log("olmaz");
       return false;
     }
-    }
-    console.log(isValidName("Fra nk") === false);
-    console.log(isValidName("Frank") === true);
-    console.log(isValidName(false) === false);
-    console.log(isValidName(null) === false);
-    console.log(isValidName(undefined) === false);
-    console.log(isValidName("") === false);
-    console.log(isValidName("  \t\n") === false);
-    console.log(isValidName("X") === false);
+    return true;
+  }
+
+    }); //foreach  
+    
+  }//tip kontrolü 
+  else{return false;}
 }
+
+  console.log(isValidName("Fran k") === false);
+   // console.log(isValidName("Frank") === true);
+   // console.log(isValidName(false) === false);
+   // console.log(isValidName(null) === false);
+   // console.log(isValidName(undefined) === false);
+   // console.log(isValidName("") === false);
+   // console.log(isValidName("  \t\n") === false);
+   // console.log(isValidName("X") === false);
 
 /*  Odev 4:
   Asagidaki katilimSaati fonksionu 2 arguman almaktadir.
