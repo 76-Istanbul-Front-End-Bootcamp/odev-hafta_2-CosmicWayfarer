@@ -102,8 +102,8 @@ function katilimSaati(dersSayisi, dersSuresi){
   var sure=Number(sure2);
 try{  
   
-  if((isNaN(sayi)) || ( isNaN(sure) ) ) throw "Geçersiz giriş";
-
+ if((isNaN(sayi)) || ( isNaN(sure) ) ) throw "Geçersiz giriş";
+ if((dersSayisi=== "")||(dersSuresi==="")) throw "Geçersiz Giriş";
   console.log( parseInt(sayi)*parseInt(sure));
   return true;
    }
@@ -120,7 +120,7 @@ console.log(katilimSaati(false,true) === false);
 console.log(katilimSaati(true,false) === false);
 console.log(katilimSaati(true,true) === false);
 console.log(katilimSaati(10,6) === false);
-console.log(katilimSaati(10,"6") === false);
+console.log(katilimSaati(10,"") === false);
 console.log(katilimSaati("10",6) === false);
 console.log(katilimSaati("10","6") === false);
 console.log(katilimSaati(6,10.1) === false);
